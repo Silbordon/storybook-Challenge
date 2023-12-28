@@ -16,20 +16,24 @@ const CardContainer = styled.div<{ imageUrl?: string }>`
   width: 23.375rem;
   min-height: ${({ imageUrl }) => (imageUrl ? '27.1875rem' : '12.625rem')};
   flex-shrink: 0;
-  background: #fff;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.10);
   border-radius: 8px;
   overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 50%;
 `;
 
 const Content = styled.div`
-  height: 50%;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 1.2rem;
 `;
 
 const Card: React.FC<CardProps> = ({ imageUrl, children }) => {
@@ -42,3 +46,6 @@ const Card: React.FC<CardProps> = ({ imageUrl, children }) => {
 };
 
 export default Card;
+
+
+
