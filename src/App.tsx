@@ -1,15 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Subtitle from "./components/atoms/Subtitle/Subtitle";
+import Avatar from "./components/atoms/Avatar/Avatar";
+import LinkButton from "./components/atoms/LinkButton/LinkButton";
 
-import './App.css';
-import styled from 'styled-components'
-
-const Apwrapper = styled.div`
-  background-color: aqua;
-`
 function App() {
+  const OvalImage = "/assets/icons/Oval.svg";
   return (
-    <Apwrapper>
-     <p>hola</p>
-    </Apwrapper>
+    <BrowserRouter>
+      <div>
+        <p>hola</p>
+        <Subtitle text="subtitulo" />
+        <Avatar imagePath={OvalImage} />
+        <LinkButton to={"*"} text={"ACTION 1"} />
+      </div>
+    </BrowserRouter>
   );
 }
 
