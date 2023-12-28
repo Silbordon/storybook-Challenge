@@ -8,6 +8,8 @@ const config: StorybookConfig = {
     "@storybook/preset-create-react-app",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    "storybook-addon-pseudo-states",
+    "@storybook/addon-controls"
   ],
   framework: {
     name: "@storybook/react-webpack5",

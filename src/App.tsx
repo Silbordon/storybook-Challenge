@@ -1,17 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Subtitle from "./components/atoms/Subtitle/Subtitle";
-import Avatar from "./components/atoms/Avatar/Avatar";
+import { BrowserRouter } from "react-router-dom";
 import LinkButton from "./components/atoms/LinkButton/LinkButton";
+import IconFavorite from "./components/atoms/IconFavorite/IconFavorite";
+import Card from "./components/atoms/Card/Card";
+import HeaderCard from "./components/molecules/HeaderCard/HeaderCard";
 
 function App() {
-  const OvalImage = "/assets/icons/Oval.svg";
+  const img = "/assets/icons/Bitmap.svg";
   return (
     <BrowserRouter>
       <div>
-        <p>hola</p>
-        <Subtitle text="subtitulo" />
-        <Avatar imagePath={OvalImage} />
         <LinkButton to={"*"} text={"ACTION 1"} />
+        <IconFavorite isFilled={true} />
+        <Card imageUrl={img} />
+        <br />
+        <Card />
+        <br />
+        <HeaderCard />
       </div>
     </BrowserRouter>
   );

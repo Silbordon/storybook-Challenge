@@ -2,11 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-interface LinkButtonProps {
+/**
+ * Component to render a Link Button
+ * @param text - string to add the button label
+ * @param to - string to add the font color -var sass-
+ * @param color -(optional) string to add color. This color is the same for the hover and active state in the Link underline 
+ */
+
+export interface LinkButtonProps {
   text: string;
   to: string;
   color?: string;
-  variant?: "default" | "hover"
 }
 
 const StyledLinkButton = styled(Link)<{ color?: string }>`
@@ -18,9 +24,13 @@ const StyledLinkButton = styled(Link)<{ color?: string }>`
   line-height: 1.125rem;
   text-decoration: none;
   transition: border-bottom 0.3s ease-in-out;
+  cursor: pointer;
 
   &:hover{
-    border-bottom: 2px solid #5DA552;
+    border-bottom: 2px solid ${({color}) => (color ? color : "#5DA552")};
+  }
+  &:active{
+    border-bottom: 2px solid ${({color}) => (color ? color : "#5DA552")};
   }
 `;
 
