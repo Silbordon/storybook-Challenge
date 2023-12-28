@@ -1,15 +1,17 @@
+import { BrowserRouter } from "react-router-dom";
+import Card from "./components/atoms/Card/Card";
+import CardMediaSimple from "./components/organisms/CardMediaSimple/CardMediaSimple";
 
-import './App.css';
-import styled from 'styled-components'
-
-const Apwrapper = styled.div`
-  background-color: aqua;
-`
 function App() {
+  const img = "/assets/icons/Bitmap.svg";
   return (
-    <Apwrapper>
-     <p>hola</p>
-    </Apwrapper>
+    <BrowserRouter>
+      <div>
+      <CardMediaSimple imageUrl={img}/>
+        <br />
+        <CardMediaSimple />
+      </div>
+    </BrowserRouter>
   );
 }
 
