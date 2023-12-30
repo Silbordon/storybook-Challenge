@@ -6,7 +6,6 @@ import styled, { keyframes, css } from "styled-components";
  * @param isFilled - boolean that switches between favorite and non-favorite
  */
 
-
 interface IconProps {
   isFilled?: boolean;
 }
@@ -41,8 +40,7 @@ const IconImage = styled.img<{ isExpanded: boolean }>`
 const emptyHeart = "/assets/icons/NoFavorite.svg";
 const filledHeart = "/assets/icons/Favorite.svg";
 
-const IconFavorite: React.FC<IconProps> = ({ isFilled}) => {
-
+const IconFavorite: React.FC<IconProps> = ({ isFilled }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [filled, setFilled] = useState(isFilled);
 
@@ -50,14 +48,11 @@ const IconFavorite: React.FC<IconProps> = ({ isFilled}) => {
     const newFilledState = !filled;
     setFilled(newFilledState);
     setIsExpanded(true);
-    // Restaurar la expansión después de un tiempo para el próximo clic
     setTimeout(() => {
       setIsExpanded(false);
     }, 600);
   };
 
-
- 
   return (
     <IconImage
       src={filled ? filledHeart : emptyHeart}

@@ -13,15 +13,15 @@ export default {
       </MemoryRouter>
     ),
   ],
-  argTypes: {
-    color: { control: "color" },
-  },
 } as Meta<typeof FooterCard>;
 
-//@ts-ignore
-const Template: StoryObj<typeof LinkButton> = (args) => (
-  <FooterCard {...args} />
-);
+export const FooterCardBase = {};
 
-//@ts-ignore
-export const FooterCardBase = Template.bind({});
+// //@ts-ignore
+// const Template: StoryObj<typeof LinkButton> = (args) => (
+//   <FooterCard {...args} />
+// );
+
+// //@ts-ignore
+// export const FooterCardBase = Template.bind({});
+

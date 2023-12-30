@@ -1,15 +1,22 @@
 import { BrowserRouter } from "react-router-dom";
-import Card from "./components/atoms/Card/Card";
-import CardMediaSimple from "./components/organisms/CardMediaSimple/CardMediaSimple";
+import Button from "./components/atoms/Button/Button";
+import React, { useState } from "react";
+import ModalLogin from "./components/organisms/ModalLogin/ModalLogin";
+
 
 function App() {
-  const img = "/assets/icons/Bitmap.svg";
+  const [isOpen, setIsOpen] = useState(false);
+
+  console.log("app", isOpen);
+  
+ 
   return (
     <BrowserRouter>
       <div>
-      <CardMediaSimple imageUrl={img}/>
-        <br />
-        <CardMediaSimple />
+        <div>
+      <Button onClick={() => setIsOpen(true)} text={"Open"} />
+      <ModalLogin isOpen={isOpen} setIsOpen={setIsOpen} />
+    </div>
       </div>
     </BrowserRouter>
   );
